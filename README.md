@@ -1,4 +1,5 @@
 # webpack-html-boilerplate
+
 This is a basic html project boilerplate for webpack with babel and webpack-dev-server support. To use it, do the following:
 
 1. Clone the repository to your new directory.

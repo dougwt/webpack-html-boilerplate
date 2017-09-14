@@ -22,19 +22,17 @@ const config = {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         use: 'babel-loader'
-      },
-      {
-        use: ExtractTextPlugin.extract({
-          use: 'css-loader'
-        }),
+      }, {
+        use: ExtractTextPlugin.extract({use: 'css-loader'}),
         test: /\.css$/
-      },
-      {
+      }, {
         test: /\.(jpe?g|png|gif|svg)$/,
         use: [
           {
             loader: 'url-loader',
-            options: { limit: 40000 }
+            options: {
+              limit: 40000
+            }
           },
           'image-webpack-loader'
         ]
@@ -46,13 +44,13 @@ const config = {
       names: ['vendor', 'manifest']
     }),
     new ExtractTextPlugin('style.[chunkhash].css'),
-    new HtmlWebpackPlugin({
-      template: 'src/index.html'
-    })
+    new HtmlWebpackPlugin({template: 'src/index.html'})
   ]
 };
 
 // Add VENDOR_LIBS to config.entry.vendor if it contains packages
-if (VENDOR_LIBS.length) { config.entry.vendor = VENDOR_LIBS; }
+if (VENDOR_LIBS.length) {
+  config.entry.vendor = VENDOR_LIBS;
+}
 
 module.exports = config;

@@ -23,7 +23,7 @@ const config = {
         exclude: /node_modules/,
         use: 'babel-loader'
       }, {
-        use: ExtractTextPlugin.extract({use: 'css-loader'}),
+        use: ExtractTextPlugin.extract({use: 'css-loader!postcss-loader'}),
         test: /\.css$/
       }, {
         test: /\.(jpe?g|png|gif|svg)$/,
